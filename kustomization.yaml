@@ -8,4 +8,4 @@ resources:
 images:
 - name: registry.cn-hangzhou.aliyuncs.com/kubernetes-study/go-cicd
   newTag: latest
-
+- name: 'registry.cn-hangzhou.aliyuncs.com/kubernetes-study/go-cicd:'
