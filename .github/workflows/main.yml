@@ -37,7 +37,9 @@ jobs:
           fetch-depth: 0
           
       - name: Trust My Directory
-        run: git config --global --add safe.directory '*'
+        run: |
+          git config --global --add safe.directory '*'
+          mkdir -p /home/runner/work/_temp/_github_home && printf "[safe]\n\tdirectory = /github/workspace" > /home/runner/work/_temp/_github_home/.gitconfig
 
       - name: kustomize edit
         if: ${{ github.event.inputs.image }}
