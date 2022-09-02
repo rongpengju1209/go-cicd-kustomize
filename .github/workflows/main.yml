@@ -39,7 +39,12 @@ jobs:
       - name: Set ownership
         run: |
           # this is to fix GIT not liking owner of the checkout dir
+          echo ">>>>>>>>>>>>>>>>>>>>>>>>>"
           git config --global --add safe.directory /github/workspace
+          git status
+          echo ">>>>>>>>>>>>>>>>>>>>>>>>>"
+          git version
+          echo ">>>>>>>>>>>>>>>>>>>>>>>>>"
 
       - name: kustomize edit
         if: ${{ github.event.inputs.image }}
