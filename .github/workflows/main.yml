@@ -46,6 +46,10 @@ jobs:
         run: |
           curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
           kustomize edit set image ${{ github.event.inputs.image }}:${{ github.event.inputs.sha-tag }}
+          echo ">>>>>>>>>>>>>>"
+          echo ${{ github.event.inputs.image }}
+          echo ${{ github.event.inputs.sha-tag }}
+          echo ">>>>>>>>>>>>>>"
           rm -f kustomize
 
       - name: Git Commit/Push Changes
