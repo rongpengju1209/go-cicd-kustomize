@@ -7,5 +7,5 @@ resources:
 - secret.yaml
 images:
 - name: 'registry.cn-hangzhou.aliyuncs.com/kubernetes-study/go-cicd:'
-- name: rongpengju/flask-demo
+- name: /go-cicd
   newTag: 4e3c18c73f15a59d7ad924682949ca3143025ab7
