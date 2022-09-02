@@ -37,7 +37,7 @@ jobs:
           fetch-depth: 0
           
       - name: Trust My Directory
-        run: export GIT_CEILING_DIRECTORIES=/__w
+        run: git config --global --add safe.directory '*'
 
       - name: kustomize edit
         if: ${{ github.event.inputs.image }}
