@@ -1,0 +1,23 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: go-cicd
+  namespace: go-cicd
+  labels:
+    app: go-cicd
+    version: v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: go-cicd
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: go-cicd
+        version: v1
+    spec:
+      containers:
+        - name: go-cicd
+          image: rongpengju/flask-demo

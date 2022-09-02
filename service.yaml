@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: go-cicd
+  namespace: go-cicd
+  labels:
+    app: go-cicd
+    version: v1
+spec:
+  ports:
+    - name: http-5000
+      protocol: TCP
+      port: 8081
+      targetPort: 8081
+  selector:
+    app: go-cicd
+    version: v1
+  type: NodePort
