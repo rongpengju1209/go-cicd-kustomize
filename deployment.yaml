@@ -20,4 +20,4 @@ spec:
     spec:
       containers:
         - name: go-cicd
-          image: rongpengju/flask-demo
+          image: registry.cn-hangzhou.aliyuncs.com/kubernetes-study/go-cicd
