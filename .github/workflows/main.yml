@@ -38,8 +38,8 @@ jobs:
           
       - name: Trust My Directory
         run: |
-          git config --global --add safe.directory '*'
           mkdir -p /home/runner/work/_temp/_github_home && printf "[safe]\n\tdirectory = /github/workspace" > /home/runner/work/_temp/_github_home/.gitconfig
+          git config --global --add safe.directory '*'
 
       - name: kustomize edit
         if: ${{ github.event.inputs.image }}
@@ -47,16 +47,6 @@ jobs:
           curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
           kustomize edit set image ${{ github.event.inputs.image }}:${{ github.event.inputs.sha-tag }}
           rm -f kustomize
-          
-      - name: Set ownership
-        run: |
-          # this is to fix GIT not liking owner of the checkout dir
-          echo ">>>>>>>>>>>>>>>>>>>>>>>>>"
-          git config --global --add safe.directory /github/workspace
-          git status
-          echo ">>>>>>>>>>>>>>>>>>>>>>>>>"
-          git version
-          echo ">>>>>>>>>>>>>>>>>>>>>>>>>"
 
       - name: Git Commit/Push Changes
         uses: actions-x/commit@v2
