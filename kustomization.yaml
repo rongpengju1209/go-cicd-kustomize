@@ -6,6 +6,6 @@ resources:
 - service.yaml
 - secret.yaml
 images:
-- name: /go-cicd
+- name: registry.cn-hangzhou.aliyuncs.com/kubernetes-study/go-cicd
   newTag: 4e3c18c73f15a59d7ad924682949ca3143025ab7
-- name: 'registry.cn-hangzhou.aliyuncs.com/kubernetes-study/go-cicd:'
+
