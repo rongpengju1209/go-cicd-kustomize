@@ -35,6 +35,9 @@ jobs:
         if: ${{ github.event.inputs.image }}
         with:
           fetch-depth: 0
+          
+      - name: Trust My Directory
+        run: export GIT_CEILING_DIRECTORIES=/__w
 
       - name: kustomize edit
         if: ${{ github.event.inputs.image }}
