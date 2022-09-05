@@ -7,5 +7,5 @@ resources:
 - secret.yaml
 images:
 - name: registry.cn-hangzhou.aliyuncs.com/kubernetes-study/go-cicd
-  newTag: "1.4"
+  newTag: "1.5"
 - name: 'registry.cn-hangzhou.aliyuncs.com/kubernetes-study/go-cicd:'
